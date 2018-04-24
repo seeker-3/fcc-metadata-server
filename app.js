@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.post('/*', (req, res) => {
-  log('hi');
+app.all('/', (req, res) => {
+  log(req.query.file);
   res.end();
 });
