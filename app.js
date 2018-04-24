@@ -1,18 +1,17 @@
 const
-  log = console.log,
-  fs = require("fs"),
-  express = require('express'),
-  multer = require('multer'),
-  app = express(),
-  upload = multer({ dest: 'uploads/' })
+      log = console.log,
+      fs = require("fs"),
+      fileUpload = require('express-fileupload'),
+      express = require('express'),
+      app = express()
 ;
 
-
+app.use(fileUpload());
 app.listen(process.env.PORT || 3000);
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
 
-app.post('/files/', (req, res) => {
-  log('hi');
+app.post('/upload', (req, res) => {
+  log(req.files);
   res.end();
 });
