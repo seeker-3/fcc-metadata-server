@@ -9,9 +9,9 @@ const
 app.use(fileUpload());
 app.listen(process.env.PORT || 3000);
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/views/index2.html'));
 
 app.post('/upload', (req, res) => {
-  log(req.files);
+  log(req.files.sample);
   res.end();
 });
