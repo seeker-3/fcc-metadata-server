@@ -8,18 +8,11 @@ const
       app = express()
 ;
 
-//app.use(fileUpload());
+
 app.listen(process.env.PORT || 3000);
 
-app.post('/upload', upload.single(), function (req, res, next) {
-  log(req.file);
-  res.end();
+app.post('/upload', upload.single('file'), (req, res, next) => {
+  res.json({size: req.file.size + ' bytes'});
 })
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
-
-// app.post('/upload', (req, res) => {
-//   log(req.files.sampleFile, req.file);
-//   res.end();
-// });
-
