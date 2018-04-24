@@ -5,10 +5,9 @@ const app = express();
 
 app.listen(process.env.PORT || 3000);
 
-app.get('/', (req, res) => {
-  if (!req.query.file){
-    res.sendFile(__dirname + '/views/index.html');
-  } else {
-    res.send(fs.statSync(req.query.file).size);
-  }
+app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
+
+app.post('*', (req, res) => {
+  log('hi');
+  res.end();
 });
