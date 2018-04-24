@@ -2,12 +2,12 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "fcc-metadata-server",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app"
   },
   "dependencies": {
     "express": "^4.16.3"
@@ -16,9 +16,9 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://github.com/seekr3/fcc-metadata-server"
   },
-  "license": "MIT",
+  "license": "",
   "keywords": [
     "node",
     "glitch",

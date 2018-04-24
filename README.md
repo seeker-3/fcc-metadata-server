@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Welcome to Glitch
 =================
 
@@ -25,3 +26,6 @@ Made by [Fog Creek](https://fogcreek.com/)
 -------------------
 
 \ ゜o゜)ノ
+=======
+# fcc-metadata-server
+>>>>>>> b045214b63de0d4450f978c21fba0d7271acf22c
