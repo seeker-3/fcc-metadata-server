@@ -11,12 +11,12 @@ const
 //app.use(fileUpload());
 app.listen(process.env.PORT || 3000);
 
-app.post('/upload', upload.single('file'), function (req, res, next) {
+app.post('/upload', upload.single(), function (req, res, next) {
   log(req.file);
   res.end();
 })
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/views/index2.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
 
 // app.post('/upload', (req, res) => {
 //   log(req.files.sampleFile, req.file);
