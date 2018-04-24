@@ -1,7 +1,12 @@
-const log = console.log;
-const fs = require("fs");
-const express = require('express');
-const app = express();
+const
+  log = console.log,
+  fs = require("fs"),
+  express = require('express'),
+  multer = require('multer'),
+  app = express(),
+  upload = multer({ dest: 'uploads/' })
+;
+
 
 app.listen(process.env.PORT || 3000);
 
