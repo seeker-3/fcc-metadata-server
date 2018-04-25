@@ -1,8 +1,12 @@
 const upload  = require('multer')({ dest: 'uploads/' }),
-      app     = require('express')();
+      fs      = require('fs'),
+      app     = require('express')()
+;
 
-app.post('/upload', upload.single('file'), (req, res) => 
-  res.json({size: req.file.size + ' bytes'}));
+app.post('/upload', upload.single('file'), (req, res) => {
+  fs.unlink(req.file.path, err => {if (err) throw err;});
+  res.json({size: req.file.size + ' bytes'});
+});
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
 
